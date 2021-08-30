@@ -7,20 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9908AC8926B7086000181B8D /* PapancaZoneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC7B26B7085E00181B8D /* PapancaZoneAppApp.swift */; };
-		9908AC8A26B7086000181B8D /* PapancaZoneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC7B26B7085E00181B8D /* PapancaZoneAppApp.swift */; };
+		9908AC8926B7086000181B8D /* PapancaZoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC7B26B7085E00181B8D /* PapancaZoneApp.swift */; };
+		9908AC8A26B7086000181B8D /* PapancaZoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC7B26B7085E00181B8D /* PapancaZoneApp.swift */; };
 		9908AC8B26B7086000181B8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC7C26B7085E00181B8D /* ContentView.swift */; };
 		9908AC8C26B7086000181B8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC7C26B7085E00181B8D /* ContentView.swift */; };
 		9908AC8D26B7086000181B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9908AC7D26B7086000181B8D /* Assets.xcassets */; };
 		9908AC8E26B7086000181B8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9908AC7D26B7086000181B8D /* Assets.xcassets */; };
+		9908AC9826B7087800181B8D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC9726B7087800181B8D /* TimerView.swift */; };
+		9908AC9926B7087800181B8D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC9726B7087800181B8D /* TimerView.swift */; };
+		9908AC9B26B709D900181B8D /* TimeIntervalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908AC9A26B709D900181B8D /* TimeIntervalPicker.swift */; };
+		9908AC9F26B70DD800181B8D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9908AC9E26B70DD800181B8D /* ComposableArchitecture */; };
+		9911568F26D87E2A00EB0620 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911568E26D87E2A00EB0620 /* MainScreen.swift */; };
+		9911569326D883F000EB0620 /* Binding+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911569226D883F000EB0620 /* Binding+.swift */; };
+		9911569526D8852600EB0620 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911569426D8852600EB0620 /* Collection.swift */; };
+		99167ED326DB0D2A00A3811A /* AnyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99167ED226DB0D2A00A3811A /* AnyViewModifier.swift */; };
+		993A130426D2B8D800BC2533 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130326D2B8D800BC2533 /* View+.swift */; };
+		993A130726D2BCB200BC2533 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130626D2BCB200BC2533 /* TimeFormatter.swift */; };
+		993A130826D2BCB200BC2533 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130626D2BCB200BC2533 /* TimeFormatter.swift */; };
+		993A130A26D2BDC300BC2533 /* TimerFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130926D2BDC300BC2533 /* TimerFeatureView.swift */; };
+		993A130B26D2BDC300BC2533 /* TimerFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130926D2BDC300BC2533 /* TimerFeatureView.swift */; };
+		993A130D26D2BED700BC2533 /* TCA+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130C26D2BED700BC2533 /* TCA+.swift */; };
+		993A130E26D2BED700BC2533 /* TCA+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130C26D2BED700BC2533 /* TCA+.swift */; };
+		993A131026D2BFE900BC2533 /* TimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130F26D2BFE900BC2533 /* TimerFeature.swift */; };
+		993A131126D2BFE900BC2533 /* TimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993A130F26D2BFE900BC2533 /* TimerFeature.swift */; };
+		993AE59C26D31D2700E816EF /* TimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AE59B26D31D2700E816EF /* TimerSetupView.swift */; };
+		993AE59E26D465AA00E816EF /* TimerSetupFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AE59D26D465AA00E816EF /* TimerSetupFeature.swift */; };
+		993AE5A026D4774500E816EF /* OptionSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AE59F26D4774500E816EF /* OptionSelector.swift */; };
+		993AE5A226D49CBD00E816EF /* BindableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AE5A126D49CBD00E816EF /* BindableAction.swift */; };
+		993AE5A526D5BC9600E816EF /* PopUpField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AE5A426D5BC9600E816EF /* PopUpField.swift */; };
+		993AE5A726D73E4700E816EF /* Fun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993AE5A626D73E4700E816EF /* Fun.swift */; };
+		993E670626B74E3600BB0F85 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E670526B74E3600BB0F85 /* Time.swift */; };
+		993E670726B74E3600BB0F85 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993E670526B74E3600BB0F85 /* Time.swift */; };
+		994956B326D2D4FC0087EFE1 /* TimeAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994956B226D2D4FC0087EFE1 /* TimeAmountView.swift */; };
+		994956B426D2D4FC0087EFE1 /* TimeAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994956B226D2D4FC0087EFE1 /* TimeAmountView.swift */; };
+		994956B926D2DBFC0087EFE1 /* Blinking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994956B826D2DBFC0087EFE1 /* Blinking.swift */; };
+		994956BA26D2DBFC0087EFE1 /* Blinking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994956B826D2DBFC0087EFE1 /* Blinking.swift */; };
+		998143C126DC479100922588 /* QuickTimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998143C026DC479100922588 /* QuickTimerSetupView.swift */; };
+		998143C426DC4A2B00922588 /* ReducerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998143C326DC4A2B00922588 /* ReducerProtocol.swift */; };
+		998143C626DC4B9700922588 /* IfActionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998143C526DC4B9700922588 /* IfActionReducer.swift */; };
+		998143C826DC4FD400922588 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998143C726DC4FD400922588 /* Optional.swift */; };
+		998143CA26DD13EA00922588 /* EmptyReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998143C926DD13EA00922588 /* EmptyReducer.swift */; };
+		99CA70F826DABAE000AD2F24 /* PapancaBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CA70F726DABAE000AD2F24 /* PapancaBackground.swift */; };
+		99CA70FA26DAC7D100AD2F24 /* PapancaButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CA70F926DAC7D100AD2F24 /* PapancaButtonStyle.swift */; };
+		99CA70FC26DACD7B00AD2F24 /* PapancaButtonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CA70FB26DACD7B00AD2F24 /* PapancaButtonBackground.swift */; };
+		99CA70FE26DAF4E600AD2F24 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CA70FD26DAF4E600AD2F24 /* Geometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9908AC7B26B7085E00181B8D /* PapancaZoneAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapancaZoneAppApp.swift; sourceTree = "<group>"; };
+		9908AC7B26B7085E00181B8D /* PapancaZoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapancaZoneApp.swift; sourceTree = "<group>"; };
 		9908AC7C26B7085E00181B8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9908AC7D26B7086000181B8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9908AC8226B7086000181B8D /* PapancaZoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PapancaZoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9908AC8826B7086000181B8D /* PapancaZoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PapancaZoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9908AC9726B7087800181B8D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		9908AC9A26B709D900181B8D /* TimeIntervalPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalPicker.swift; sourceTree = "<group>"; };
+		9911568E26D87E2A00EB0620 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		9911569226D883F000EB0620 /* Binding+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+.swift"; sourceTree = "<group>"; };
+		9911569426D8852600EB0620 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		99167ED226DB0D2A00A3811A /* AnyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewModifier.swift; sourceTree = "<group>"; };
+		993A130326D2B8D800BC2533 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		993A130626D2BCB200BC2533 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		993A130926D2BDC300BC2533 /* TimerFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeatureView.swift; sourceTree = "<group>"; };
+		993A130C26D2BED700BC2533 /* TCA+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TCA+.swift"; sourceTree = "<group>"; };
+		993A130F26D2BFE900BC2533 /* TimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeature.swift; sourceTree = "<group>"; };
+		993AE59B26D31D2700E816EF /* TimerSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetupView.swift; sourceTree = "<group>"; };
+		993AE59D26D465AA00E816EF /* TimerSetupFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetupFeature.swift; sourceTree = "<group>"; };
+		993AE59F26D4774500E816EF /* OptionSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelector.swift; sourceTree = "<group>"; };
+		993AE5A126D49CBD00E816EF /* BindableAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableAction.swift; sourceTree = "<group>"; };
+		993AE5A426D5BC9600E816EF /* PopUpField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpField.swift; sourceTree = "<group>"; };
+		993AE5A626D73E4700E816EF /* Fun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fun.swift; sourceTree = "<group>"; };
+		993E670526B74E3600BB0F85 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		994956B226D2D4FC0087EFE1 /* TimeAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAmountView.swift; sourceTree = "<group>"; };
+		994956B826D2DBFC0087EFE1 /* Blinking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blinking.swift; sourceTree = "<group>"; };
+		998143C026DC479100922588 /* QuickTimerSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTimerSetupView.swift; sourceTree = "<group>"; };
+		998143C326DC4A2B00922588 /* ReducerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerProtocol.swift; sourceTree = "<group>"; };
+		998143C526DC4B9700922588 /* IfActionReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfActionReducer.swift; sourceTree = "<group>"; };
+		998143C726DC4FD400922588 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		998143C926DD13EA00922588 /* EmptyReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyReducer.swift; sourceTree = "<group>"; };
+		99CA70F726DABAE000AD2F24 /* PapancaBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapancaBackground.swift; sourceTree = "<group>"; };
+		99CA70F926DAC7D100AD2F24 /* PapancaButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapancaButtonStyle.swift; sourceTree = "<group>"; };
+		99CA70FB26DACD7B00AD2F24 /* PapancaButtonBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapancaButtonBackground.swift; sourceTree = "<group>"; };
+		99CA70FD26DAF4E600AD2F24 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9908AC9F26B70DD800181B8D /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +120,18 @@
 		9908AC7A26B7085E00181B8D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				9908AC7B26B7085E00181B8D /* PapancaZoneAppApp.swift */,
+				998143C226DC4A1A00922588 /* TCA */,
+				9911568D26D87E1A00EB0620 /* MainScreen */,
+				993AE5A326D5BC6600E816EF /* SwiftUIViews */,
+				993AE59626D31A9100E816EF /* TimerSetup */,
+				99B31C6D26D2C50D001F2236 /* TimerFeature */,
+				9908AC7B26B7085E00181B8D /* PapancaZoneApp.swift */,
 				9908AC7C26B7085E00181B8D /* ContentView.swift */,
+				993AE5A626D73E4700E816EF /* Fun.swift */,
+				993E670526B74E3600BB0F85 /* Time.swift */,
+				9911569226D883F000EB0620 /* Binding+.swift */,
+				9911569426D8852600EB0620 /* Collection.swift */,
+				998143C726DC4FD400922588 /* Optional.swift */,
 				9908AC7D26B7086000181B8D /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -66,6 +144,65 @@
 				9908AC8826B7086000181B8D /* PapancaZoneApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9911568D26D87E1A00EB0620 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9911568E26D87E2A00EB0620 /* MainScreen.swift */,
+				99CA70F726DABAE000AD2F24 /* PapancaBackground.swift */,
+				998143C026DC479100922588 /* QuickTimerSetupView.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		993AE59626D31A9100E816EF /* TimerSetup */ = {
+			isa = PBXGroup;
+			children = (
+				993AE59B26D31D2700E816EF /* TimerSetupView.swift */,
+				993AE59D26D465AA00E816EF /* TimerSetupFeature.swift */,
+			);
+			path = TimerSetup;
+			sourceTree = "<group>";
+		};
+		993AE5A326D5BC6600E816EF /* SwiftUIViews */ = {
+			isa = PBXGroup;
+			children = (
+				9908AC9A26B709D900181B8D /* TimeIntervalPicker.swift */,
+				993AE5A426D5BC9600E816EF /* PopUpField.swift */,
+				993AE59F26D4774500E816EF /* OptionSelector.swift */,
+				993A130326D2B8D800BC2533 /* View+.swift */,
+				99CA70FD26DAF4E600AD2F24 /* Geometry.swift */,
+				99167ED226DB0D2A00A3811A /* AnyViewModifier.swift */,
+				99CA70F926DAC7D100AD2F24 /* PapancaButtonStyle.swift */,
+				99CA70FB26DACD7B00AD2F24 /* PapancaButtonBackground.swift */,
+			);
+			path = SwiftUIViews;
+			sourceTree = "<group>";
+		};
+		998143C226DC4A1A00922588 /* TCA */ = {
+			isa = PBXGroup;
+			children = (
+				993A130C26D2BED700BC2533 /* TCA+.swift */,
+				993AE5A126D49CBD00E816EF /* BindableAction.swift */,
+				998143C326DC4A2B00922588 /* ReducerProtocol.swift */,
+				998143C926DD13EA00922588 /* EmptyReducer.swift */,
+				998143C526DC4B9700922588 /* IfActionReducer.swift */,
+			);
+			path = TCA;
+			sourceTree = "<group>";
+		};
+		99B31C6D26D2C50D001F2236 /* TimerFeature */ = {
+			isa = PBXGroup;
+			children = (
+				9908AC9726B7087800181B8D /* TimerView.swift */,
+				994956B826D2DBFC0087EFE1 /* Blinking.swift */,
+				994956B226D2D4FC0087EFE1 /* TimeAmountView.swift */,
+				993A130926D2BDC300BC2533 /* TimerFeatureView.swift */,
+				993A130F26D2BFE900BC2533 /* TimerFeature.swift */,
+				993A130626D2BCB200BC2533 /* TimeFormatter.swift */,
+			);
+			path = TimerFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +221,9 @@
 			dependencies = (
 			);
 			name = "PapancaZoneApp (iOS)";
+			packageProductDependencies = (
+				9908AC9E26B70DD800181B8D /* ComposableArchitecture */,
+			);
 			productName = "PapancaZoneApp (iOS)";
 			productReference = 9908AC8226B7086000181B8D /* PapancaZoneApp.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +272,9 @@
 				Base,
 			);
 			mainGroup = 9908AC7526B7085E00181B8D;
+			packageReferences = (
+				9908AC9D26B70DD800181B8D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 9908AC8326B7086000181B8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,8 +309,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99CA70FA26DAC7D100AD2F24 /* PapancaButtonStyle.swift in Sources */,
+				993AE5A026D4774500E816EF /* OptionSelector.swift in Sources */,
+				993A130D26D2BED700BC2533 /* TCA+.swift in Sources */,
+				9908AC9826B7087800181B8D /* TimerView.swift in Sources */,
+				998143C426DC4A2B00922588 /* ReducerProtocol.swift in Sources */,
+				993AE5A726D73E4700E816EF /* Fun.swift in Sources */,
+				9911568F26D87E2A00EB0620 /* MainScreen.swift in Sources */,
+				993AE59E26D465AA00E816EF /* TimerSetupFeature.swift in Sources */,
+				99CA70F826DABAE000AD2F24 /* PapancaBackground.swift in Sources */,
+				9908AC9B26B709D900181B8D /* TimeIntervalPicker.swift in Sources */,
+				993A130726D2BCB200BC2533 /* TimeFormatter.swift in Sources */,
+				998143C826DC4FD400922588 /* Optional.swift in Sources */,
 				9908AC8B26B7086000181B8D /* ContentView.swift in Sources */,
-				9908AC8926B7086000181B8D /* PapancaZoneAppApp.swift in Sources */,
+				993E670626B74E3600BB0F85 /* Time.swift in Sources */,
+				9908AC8926B7086000181B8D /* PapancaZoneApp.swift in Sources */,
+				993AE5A526D5BC9600E816EF /* PopUpField.swift in Sources */,
+				993AE59C26D31D2700E816EF /* TimerSetupView.swift in Sources */,
+				998143C126DC479100922588 /* QuickTimerSetupView.swift in Sources */,
+				993A130A26D2BDC300BC2533 /* TimerFeatureView.swift in Sources */,
+				99167ED326DB0D2A00A3811A /* AnyViewModifier.swift in Sources */,
+				99CA70FC26DACD7B00AD2F24 /* PapancaButtonBackground.swift in Sources */,
+				994956B326D2D4FC0087EFE1 /* TimeAmountView.swift in Sources */,
+				9911569326D883F000EB0620 /* Binding+.swift in Sources */,
+				993A131026D2BFE900BC2533 /* TimerFeature.swift in Sources */,
+				998143CA26DD13EA00922588 /* EmptyReducer.swift in Sources */,
+				998143C626DC4B9700922588 /* IfActionReducer.swift in Sources */,
+				993A130426D2B8D800BC2533 /* View+.swift in Sources */,
+				9911569526D8852600EB0620 /* Collection.swift in Sources */,
+				993AE5A226D49CBD00E816EF /* BindableAction.swift in Sources */,
+				994956B926D2DBFC0087EFE1 /* Blinking.swift in Sources */,
+				99CA70FE26DAF4E600AD2F24 /* Geometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +347,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993A131126D2BFE900BC2533 /* TimerFeature.swift in Sources */,
+				993A130E26D2BED700BC2533 /* TCA+.swift in Sources */,
+				993A130B26D2BDC300BC2533 /* TimerFeatureView.swift in Sources */,
+				993E670726B74E3600BB0F85 /* Time.swift in Sources */,
+				993A130826D2BCB200BC2533 /* TimeFormatter.swift in Sources */,
+				994956B426D2D4FC0087EFE1 /* TimeAmountView.swift in Sources */,
+				9908AC9926B7087800181B8D /* TimerView.swift in Sources */,
 				9908AC8C26B7086000181B8D /* ContentView.swift in Sources */,
-				9908AC8A26B7086000181B8D /* PapancaZoneAppApp.swift in Sources */,
+				994956BA26D2DBFC0087EFE1 /* Blinking.swift in Sources */,
+				9908AC8A26B7086000181B8D /* PapancaZoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +489,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +519,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -389,6 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -444,6 +626,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9908AC9D26B70DD800181B8D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9908AC9E26B70DD800181B8D /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9908AC9D26B70DD800181B8D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9908AC7626B7085E00181B8D /* Project object */;
 }
