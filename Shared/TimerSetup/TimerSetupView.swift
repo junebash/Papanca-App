@@ -5,6 +5,10 @@ import ComposableArchitecture
 public struct TimerSetupView: View {
   let store: Store<TimerSetupState, TimerSetupAction>
 
+  public init(store: Store<TimerSetupState, TimerSetupAction>) {
+    self.store = store
+  }
+
   public struct LocalState: Equatable {
     public var showingTime = false
     public var showingChimeMinPicker = false
@@ -14,8 +18,8 @@ public struct TimerSetupView: View {
   @State public var localState: LocalState = .init()
 
   public var body: some View {
-    Form {
-      WithViewStore(store) { viewStore in
+    WithViewStore(store) { viewStore in
+      Form {
         Section {
           OptionSelector(
             title: "Timer Mode",
@@ -61,8 +65,9 @@ public struct TimerSetupView: View {
         }
       }
     }
-    .navigationTitle("Timer Setup")
-    .navigationBarTitleDisplayMode(.inline)
+    .frame(maxWidth: .infinity)
+//    .navigationTitle("Timer Setup")
+//    .navigationBarTitleDisplayMode(.inline)
   }
 
   @ViewBuilder
@@ -81,8 +86,7 @@ public struct TimerSetupView: View {
 struct TimerSetupView_Previews: PreviewProvider {
   static let store = Store<TimerSetupState, TimerSetupAction>(
     initialState: TimerSetupState(),
-    reducer: .timerSetup,
-    environment: .init()
+    reducer: TimerSetupReducer()
   )
 
   static var previews: some View {

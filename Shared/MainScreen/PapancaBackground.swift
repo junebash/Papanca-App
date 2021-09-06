@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension Gradient {
-  static var day: Gradient {
+  public static var day: Gradient {
     Gradient(colors: [
       Color(red: 0.1, green: 0.5, blue: 0.7),
       Color(red: 0.4, green: 0.7, blue: 1),
@@ -13,7 +13,7 @@ extension Gradient {
     ])
   }
 
-  static var night: Gradient {
+  public static var night: Gradient {
     Gradient(colors: [
       Color(red: 0.1, green: 0.1, blue: 0.4),
       Color(red: 0.17, green: 0.12, blue: 0.35),
@@ -23,7 +23,7 @@ extension Gradient {
     ])
   }
 
-  static var transitional: Gradient {
+  public static var transitional: Gradient {
     Gradient(colors: [
       Color(red: 0.8, green: 0.7, blue: 0.1),
       Color(red: 0.82, green: 0.6, blue: 0.35),
@@ -39,18 +39,7 @@ extension Gradient {
 public struct PapancaBackground: View {
   private var gradient: Gradient
 
-  init(
-    now: Date = .now,
-    calendar: Calendar = .autoupdatingCurrent
-  ) {
-    self.init(hourOfDay: calendar.component(.hour, from: now))
-  }
-
-  init(hourOfDay: Int) {
-    self.init(gradient: Self.gradient(for: hourOfDay))
-  }
-
-  init(gradient: Gradient) {
+  public init(gradient: Gradient) {
     self.gradient = gradient
   }
 

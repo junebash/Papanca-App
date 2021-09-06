@@ -42,17 +42,15 @@ public enum TimerSetupAction: Equatable, BindableAction {
   case binding(BindingAction<TimerSetupState>)
   case show
   case dismiss
+
+  static func setShowing(_ willShow: Bool) -> Self {
+    willShow ? .show : .dismiss
+  }
 }
 
 
-public struct TimerSetupEnvironment {
-  public init() {}
-}
-
-
-extension Reducer
-where State == TimerSetupState, Action == TimerSetupAction, Environment == TimerSetupEnvironment {
-  public static var timerSetup: Self {
-    .empty.binding()
+public struct TimerSetupReducer: ReducerProtocol {
+  public func reduce(state: inout TimerSetupState, action: TimerSetupAction) -> Effect<TimerSetupAction, Never> {
+    return .none
   }
 }

@@ -1,58 +1,70 @@
 import SwiftUI
 import ComposableArchitecture
 
-public struct AppState: Equatable {
-  public enum Screen: Equatable {
-    case main
-    case quickTimer(QuickTimerState)
-    case customTimer(TimerSetupState)
-
-    var isMain: Bool {
-      if case .main = self { return true } else { return false }
-    }
-
-    var isQuickTimer: Bool {
-      if case .quickTimer = self { return true } else { return false }
-    }
-
-    var showCustomTimer: Bool {
-      switch self {
-      case .main, .customTimer: return true
-      default: return false
-      }
-    }
-
-    func show<CaseValue: Equatable>(_ screen: CasePath<Screen, CaseValue>) -> Bool {
-      if case .main = self { return true }
-      else { return screen.extract(from: self).isNil.isFalse }
-    }
-
-    func `is`<CaseValue: Equatable>(_ screen: CasePath<Screen, CaseValue>) -> Bool {
-      screen.extract(from: self).isNil.isFalse
-    }
-  }
-
-  public var hourOfDay: Int
-  public var screen: Screen = .main
-
-  public var quickTimer: QuickTimerState? {
-    (/Screen.quickTimer).extract(from: screen)
-  }
-
-  public var customTimer: TimerSetupState? {
-    (/Screen.customTimer).extract(from: screen)
-  }
-}
-
-
-public enum AppAction: Equatable {
-  case quickTimer(QuickTimerAction)
-  case customTimer(TimerSetupAction)
-}
-
 
 public struct MainScreen: View {
+  private struct Option<State: Equatable, Action, Content: View>: View {
+    private struct ViewState: Equatable {
+      var showButton: Bool
+      var showContent: Bool
+
+      init(
+        screen: AppState.Screen,
+        casePath: CasePath<AppState.Screen, State>
+      ) {
+        showButton = casePath ~= screen || screen == .main
+        showContent = casePath ~= screen
+      }
+    }
+    private let title: String
+    private let casePath: CasePath<AppState.Screen, State>
+    private let store: Store<AppState, AppAction>
+    private let content: (Store<State, Action>) -> Content
+    private let action: (Action) -> AppAction
+
+    @ObservedObject private var dispatch: ViewStore<ViewState, Bool>
+
+    init(
+      title: String,
+      store: Store<AppState, AppAction>,
+      casePath: CasePath<AppState.Screen, State>,
+      action: @escaping (Action) -> AppAction,
+      expand: @escaping (Bool) -> Action,
+      content: @escaping (Store<State, Action>) -> Content
+    ) {
+      self.title = title
+      self.store = store
+      self.casePath = casePath
+      self.content = content
+      self.action = action
+      self.dispatch = ViewStore(store.scope(
+        state: { ViewState(screen: $0.screen, casePath: casePath) },
+        action: { action(expand($0)) }
+      ))
+    }
+
+    var body: some View {
+      if dispatch.showButton {
+        ExpandableStoreField(store: store.scope(
+          state: { casePath.extract(from: $0.screen) },
+          action: action
+        )) { localStore in
+          content(localStore)
+            .frame(minWidth: 300, maxWidth: .infinity, minHeight: 300)
+        } label: {
+          Text(title)
+            .onTapGesture {
+              dispatch.send(!dispatch.showContent)
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .compositingGroup()
+      }
+    }
+  }
+
   let store: Store<AppState, AppAction>
+  // TODO: Optimize; make 'viewState'/'viewAction' that only has required stuff
   @ObservedObject var viewStore: ViewStore<AppState, AppAction>
 
   public init(_ store: Store<AppState, AppAction>) {
@@ -62,69 +74,60 @@ public struct MainScreen: View {
 
   public var body: some View {
     VStack(spacing: 20) {
-      TitledExpandableField(
+      Option(
         title: "Quick Timer",
-        selection: "nil",
-        showingContent: viewStore.binding(
-          get: { $0.screen.is(/AppState.Screen.quickTimer)},
-          send: { .quickTimer($0 ? .show : .dismiss) }
-        )
-      ) {
-        IfLetStore(store.scope(
-          state: \.quickTimer,
-          action: { .quickTimer($0) }
-        )) { quickTimerStore in
-          QuickTimerSetupView(store: quickTimerStore)
-        }
-      }
-      .placeholderColor(.blue)
-      .compositingGroup()
-      .shadow(radius: 5)
+        store: store,
+        casePath: /AppState.Screen.quickTimer,
+        action: AppAction.quickTimer,
+        expand: QuickTimerAction.setShowing(_:),
+        content: QuickTimerSetupView.init
+      )
 
-      if viewStore.screen.showCustomTimer {
-        Group {
-          Button(action: {}) {
-            Text("Custom Timer")
-              .frame(maxWidth: .infinity)
-          }
-          .sheet(
-            isPresented: viewStore.binding(
-              get: { $0.screen.is(/AppState.Screen.customTimer) },
-              send: { .customTimer($0 ? .show : .dismiss) }
-            ),
-            onDismiss: viewStore.willSend(.customTimer(.dismiss)),
-            content: {
-              IfLetStore(store.scope(
-                state: \.customTimer,
-                action: AppAction.customTimer
-              )) { customTimerSetupStore in
-                TimerSetupView(store: customTimerSetupStore)
-              }
-            }
-          )
+      Option(
+        title: "Custom Timer",
+        store: store,
+        casePath: /AppState.Screen.customTimer,
+        action: AppAction.customTimer,
+        expand: TimerSetupAction.setShowing(_:),
+        content: TimerSetupView.init
+      )
 
-          Button(action: {}) {
-            Text("Presets")
-              .frame(maxWidth: .infinity)
-          }
+      Option(
+        title: "Presets",
+        store: store,
+        casePath: /AppState.Screen.presets,
+        action: AppAction.presets,
+        expand: { _ in .temp },
+        content: { _ in EmptyView() }
+      )
 
-          Button(action: {}) {
-            Text("Stats & Settings")
-              .frame(maxWidth: .infinity)
-          }
-        }
-        .buttonStyle(.papanca)
-      }
+      Option(
+        title: "Stats",
+        store: store,
+        casePath: /AppState.Screen.stats,
+        action: AppAction.stats,
+        expand: { _ in .temp },
+        content: { _ in EmptyView() }
+      )
+
+      Option(
+        title: "Settings",
+        store: store,
+        casePath: /AppState.Screen.settings,
+        action: AppAction.settings,
+        expand: { _ in .temp },
+        content: { _ in EmptyView() }
+      )
     }
-    .frame(maxHeight: 400)
+    .shadow(radius: 5)
     .fixedSize(horizontal: true, vertical: false)
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background {
       ZStack {
-        PapancaBackground(hourOfDay: viewStore.hourOfDay)
+        PapancaBackground(gradient: viewStore.system.colorPalette.papancaBGGradient)
 
         Group {
-          if !viewStore.screen.isMain {
+          if !(/AppState.Screen.main ~= viewStore.screen) {
             Color.clear.background(.thinMaterial, ignoresSafeAreaEdges: .all)
           }
         }
@@ -137,7 +140,6 @@ public struct MainScreen: View {
 
 enum MainScreen_Previews: PreviewProvider {
   static var previews: some View {
-//    MainScreen()
-    EmptyView()
+    MainScreen(Store(initialState: .init(), reducer: AppReducer(preferences: TempPreferencesClient())))
   }
 }

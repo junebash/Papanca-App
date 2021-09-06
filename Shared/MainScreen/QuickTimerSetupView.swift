@@ -12,6 +12,27 @@ public enum QuickTimerAction: Equatable {
   case startTimer
   case show
   case dismiss
+
+  static func setShowing(_ willShow: Bool) -> Self {
+    willShow ? .show : .dismiss
+  }
+}
+
+
+public struct QuickTimerReducer: ReducerProtocol {
+  public func reduce(
+    state: inout QuickTimerState,
+    action: QuickTimerAction
+  ) -> Effect<QuickTimerAction, Never> {
+    switch action {
+    case .setTime(let time):
+      state.time = time
+      return .none
+
+    case .startTimer, .show, .dismiss: // handled upstream
+      return .none
+    }
+  }
 }
 
 
